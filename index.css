@@ -852,10 +852,12 @@
 }
 
 @media (max-width: 480px) {
-    .main .inner .copy h1,
-    .main .inner .copy h1 span {
-        font-size: clamp(2rem, 8vw, 3rem);
-        letter-spacing: -0.125rem;
+    .main .inner .copy .first-text{
+        font-size: clamp(2rem, 14vw, 4rem);
+    }
+    .main .inner .copy .second-text {
+        font-size: clamp(2rem, 15vw, 4rem);
+        letter-spacing: normal;
     }
 
     .about h1 {

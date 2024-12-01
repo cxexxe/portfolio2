@@ -418,6 +418,33 @@ a{
     top: 0;
     }
     
+    .advantages .marquee_wrap {
+        position: absolute;
+        bottom: 70vw;
+    }
+    .contacts .marquee_wrap {
+        position: absolute;
+        bottom: 30vw;
+    }
+
+    .advantages .marqueeTwo, .contacts .marqueeTwo {
+        font-size: 30vw;
+        line-height: 1em;
+    }
+
+    .marqueeOne, .marqueeTwo {
+        font-size: 20vw;
+    }
+
+    .marquee_container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 34%; 
+        width: 100%;
+        z-index: 1;
+        transform: translateY(-50%);
+    }
 }
 
 

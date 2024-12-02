@@ -1468,6 +1468,13 @@
                         notification.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)';
                         notification.style.fontSize = '16px'; 
                         notification.style.zIndex = '10000'; 
+                        // 모바일 화면 크기 조정
+                        if (window.innerWidth <= 768) { // 모바일 화면 크기
+                            notification.style.width = '60%'; // 모바일에서의 너비
+                            notification.style.padding = '15px 20px'; // 모바일에서의 패딩
+                            notification.style.fontSize = '14px'; // 모바일에서의 폰트 크기
+                        }
+
                         document.body.appendChild(notification);
                         
                         setTimeout(() => {

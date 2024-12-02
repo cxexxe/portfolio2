@@ -76,6 +76,9 @@ body{
     position: relative;
 
 }
+.overlay-wrap #link_none .name{
+    width: 100%;
+}
 .overlay-wrap .link img, .close img{
     width: 2vw;
     height: 2vw;

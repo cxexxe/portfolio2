@@ -46,16 +46,10 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* header */
 body{
-    overflow: auto;
+    overflow: hidden;
     cursor: none;
 }
 /* overlay가 열렸을 때 html 스크롤 방지 */
-body.overlay-active {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
 
 a{
     cursor: none;
@@ -300,6 +294,9 @@ a{
 @media (max-width: 780px) {
     .header .menu li a{
         font-size: 2vw;
+    }
+    body{
+        overflow: auto;
     }
 }
 @media (max-width: 480px) {

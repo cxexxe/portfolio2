@@ -1160,7 +1160,7 @@
                     <div class="dpbox details">
                         <div class="flex"> <!-- 첫번째 -->
                             <div class="box name"> 
-                                <h3>ONL Application</h3>
+                                <h3>You get me so high</h3>
                             </div>
                             <div class="box link">
                                 <a href="https://www.figma.com/proto/XK28ziU19XHFfSv3I3T6Qa/%EA%B9%80%EB%AF%BC%EA%B2%BD_UI%EB%94%94%EC%9E%90%EC%9D%B8?page-id=372%3A326&node-id=413-577&viewport=-774%2C4915%2C0.51&t=DWm3A1H6JPT1So3W-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=413%3A389">
@@ -1438,7 +1438,13 @@
                         <div class="col1_btns">
                             <div class="btns">
                                 <button id="downloadBtn" class="resume_btn">Resume</button> <!-- ID 추가 -->
-                                <button id="arrowBtn" class="arrow"><img src="images/download.png" alt=""></button> <!-- ID 변경 -->
+                                <button id="arrowBtn" class="arrow">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M7 10L12 15L17 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 15V3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button> <!-- ID 변경 -->
                                 <!-- 모달 창 -->
                                 <div id="passwordModal" class="re-modal" style="display: none;"> <!-- 초기 상태를 none으로 설정 -->
                                     <div class="re-modal-content">
@@ -1706,28 +1712,43 @@
             }
         });
 
-        // 배경색 변경 애니메이션은 그대로 유지
+        //배경색 변환
         const originalBgColor = 'linear-gradient(#FFAA4D, #AD0101, #620202)';
         const grayGradient = 'linear-gradient(171deg, #CDD2DD 9.79%, #E9EBEE 39.14%, #CDD2DD 65.68%, #EBEDF1 90.21%)';
 
-        // projects 섹션에서의 색상 변경
+        // 모바일 여부 확인
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        // projects 섹션에서의 메뷰 텍스트 색상 변경
         ScrollTrigger.create({
             trigger: '.projects',
             start: 'top 40%',
             end: 'bottom 20%',
             onEnter: () => {
                 gsap.to('.wrap', { background: grayGradient, duration: 1 });
-                document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                    gsap.to(link, { color: '#43040D', duration: 1 }); // 브라운으로 변경
-                });
+                if (!isMobile) {
+                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+                        gsap.to(link, { color: '#43040D', duration: 1 }); // 브라운으로 변경
+                    });
+                } else {
+                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
+                    });
+                }
                 // 로고 이미지 변경
                 document.querySelector('.logo img').src = 'images/LOGO_brown.png';
             },
             onLeaveBack: () => {
                 gsap.to('.wrap', { background: originalBgColor, duration: 1 });
-                document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                    gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
-                });
+                if (!isMobile) {
+                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
+                    });
+                } else {
+                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
+                    });
+                }
                 // 원래 로고로 복귀
                 document.querySelector('.logo img').src = 'images/LOGO.png';
             },
@@ -1740,21 +1761,34 @@
             end: 'bottom 20%',
             onEnter: () => {
                 gsap.to('.wrap', { background: originalBgColor, duration: 1 });
-                document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
-            });
+                if (!isMobile) {
+                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
+                    });
+                } else {
+                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
+                    });
+                }
                 // 원래 로고로 복귀
                 document.querySelector('.logo img').src = 'images/LOGO.png';
             },
             onLeaveBack: () => {
                 gsap.to('.wrap', { background: grayGradient, duration: 1 });
-                document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                gsap.to(link, { color: '#43040D', duration: 1 }); // 브라운으로 변경
-            });
+                if (!isMobile) {
+                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+                        gsap.to(link, { color: '#43040D', duration: 1 }); // 브라운으로 변경
+                    });
+                } else {
+                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
+                    });
+                }
                 // 로고 이미지 변경
                 document.querySelector('.logo img').src = 'images/LOGO_brown.png';
             },
         });
+
         
 
         /* 텍스트 마키 */

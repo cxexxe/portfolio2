@@ -46,7 +46,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* header */
 body{
-    overflow: hidden;
+    overflow: auto;
     cursor: none;
 }
 /* overlay가 열렸을 때 html 스크롤 방지 */

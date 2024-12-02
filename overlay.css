@@ -12,6 +12,7 @@ body{
     color: var(--color-brown);
 }
 
+
 .overlay-wrap{
     padding: 60px;
     /* outline: solid 1px red; */
@@ -175,6 +176,7 @@ body{
     color: var(--color-brown);
     font-weight: 400;
 }
+
 .overlay-wrap .describe .contribution .txtBox{
     margin-bottom: 20px;
 }
@@ -194,7 +196,6 @@ body{
     border-radius: 50%;
     transform: translateY(50%); 
 }
-
 
 
 /* swiper */
@@ -244,6 +245,7 @@ body{
 
 /* 미디어쿼리 */
 @media screen and (max-width:480px){
+
     .content{
         width: 100% !important;
         height: 30% !important;
@@ -269,8 +271,8 @@ body{
     .overlay-wrap .dpbox{
         border-radius: 3vw;
         overflow: hidden;
-        padding: 3vw;
-        margin: 0.3vw 0;
+        padding: 0;
+        margin:  0;
         /* outline: solid 1px red; */
     }
     .overlay-wrap .box{
@@ -278,26 +280,30 @@ body{
         overflow: hidden;
     }
     .overlay-wrap .flex{
-        gap: 10px;
-        margin-bottom: 10px;
+        gap: 5px;
+        margin-bottom: 5px;
         width: 100%;
     }
     .overlay-wrap .name{
-        width: 60vw;
-        height: 12vw;
+        width: 77vw;
+        height: 55px;
         /* outline: solid 1px red; */
     }
     .overlay-wrap .name h3{
-        font-size: 4.2vw;
+        font-size: 20px;
         line-height: 2.1;
-        padding: 1vw 4vw;
+        padding: 6px 24px;
         width: fit-content;
+        align-items: center;
     }
-    .overlay-wrap .link, .close{
-        width: 12vw;
-        height: 12vw;
+    .overlay-wrap .close{
+        width: 55px;
+        height: 55px;
     }
-    .overlay-wrap .link img, .close img{
+    .overlay-wrap .link{
+        display: none;
+    }
+    .overlay-wrap .close img{
         width: 5vw;
         height: 5vw;
         position: absolute;
@@ -316,25 +322,30 @@ body{
     .overlay-wrap .info{
         width: 100%;
         height: 15vw;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     .infoBox{
-        width: 90%;
-        height: 15vw;
-        padding: 3vw 4vw;
+        width: 100%;
+        height: 60px;
+        padding: 8px 24px;
+    }
+    .infoBox div{
+        width: fit-content;
     }
     .overlay-wrap .info p{
-        font-size: 2.5vw;
-        color: var(--color-brown);
+        font-size: 12px;
+        font-weight: 600;
+        color: rgb(132, 91, 91);
     }
     .overlay-wrap .info h4{
-        font-size: 3.5vw;
+        font-size: 16px;
     }
     
     .overlay-wrap .describe{
         /* outline: solid 1px red; */
-        padding: 4vw;
+        padding: 10px 24px;
     }
+    
     .overlay-wrap .scrollBox{
         width: 100%;
         height: 100%;
@@ -345,12 +356,13 @@ body{
         margin-bottom: 3vw;
     }
     .overlay-wrap .describe .overview span, .contribution span{
-        font-size: 2.5vw;
-        font-weight: 500;
+        font-size: 12px;
+        font-weight: 600;
+        color: rgb(132, 91, 91);
     }
     .overlay-wrap .describe .overview p, .contribution p{
-        font-size: 3.5vw;
-        line-height: 1.6;
+        font-size: 16px;
+        line-height: 1.5;
         color: var(--color-brown);
         font-weight: 400;
     }
@@ -365,6 +377,7 @@ body{
     .txtBox p::before {
         width: 1.5vw;
         height: 1.5vw;
+        background-color: var(--color-brown);
     }
     
 }

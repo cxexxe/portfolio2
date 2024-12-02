@@ -21,9 +21,13 @@
     <div class="wrap">
         <div class="header">
             <div class="header_inner">
-                <div class="logo">
-                    <a href="#" class="scroll-link" data-target=".main"><img src="images/LOGO.png" alt=""></a>
-                </div>
+                        <div class="logo">
+                            <a href="#" class="scroll-link" data-target=".main">
+                                <svg width="69" height="24" viewBox="0 0 69 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.712536 0.727272H7.67844L13.5875 15.1364H13.8603L19.7694 0.727272H26.7353V24H21.258V9.70455H21.0648L15.4739 23.8523H11.9739L6.38299 9.625H6.18981V24H0.712536V0.727272ZM35.8688 0.727272V24H30.2438V0.727272H35.8688ZM59.2069 0.727272V24H54.4341L45.1728 10.5682H45.025V24H39.4V0.727272H44.2409L53.4 14.1364H53.5932V0.727272H59.2069ZM68.3688 0.727272V24H62.7438V0.727272H68.3688Z" fill="white"/>
+                                </svg>
+                            </a>
+                        </div>
                 <input type="checkbox" class="menu-btn" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul class="menu">
@@ -1492,7 +1496,11 @@
 
                     <div class="col one">
                         <div class="logo">
-                            <a href="#" class="scroll-link" data-target=".main"><img src="images/LOGO.png" alt=""></a>
+                            <a href="#" class="scroll-link" data-target=".main">
+                                <svg width="69" height="24" viewBox="0 0 69 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.712536 0.727272H7.67844L13.5875 15.1364H13.8603L19.7694 0.727272H26.7353V24H21.258V9.70455H21.0648L15.4739 23.8523H11.9739L6.38299 9.625H6.18981V24H0.712536V0.727272ZM35.8688 0.727272V24H30.2438V0.727272H35.8688ZM59.2069 0.727272V24H54.4341L45.1728 10.5682H45.025V24H39.4V0.727272H44.2409L53.4 14.1364H53.5932V0.727272H59.2069ZM68.3688 0.727272V24H62.7438V0.727272H68.3688Z" fill="white"/>
+                                </svg>
+                            </a>
                         </div>
                         <div class="col1_btns">
                             <div class="btns">
@@ -1607,7 +1615,13 @@
                         <div class="col4_con">
                             <ul class="social_list">
                                 <li class="list_item">
-                                    <a href="https://www.linkedin.com/in/cxexxe/" target="_blank"><img src="images/linkedin.png" alt=""></a>
+                                    <a href="https://www.linkedin.com/in/cxexxe/" target="_blank">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 8C16.5913 8 18.1174 8.63214 19.2426 9.75736C20.3679 10.8826 21 12.4087 21 14V21H17V14C17 13.4696 16.7893 12.9609 16.4142 12.5858C16.0391 12.2107 15.5304 12 15 12C14.4696 12 13.9609 12.2107 13.5858 12.5858C13.2107 12.9609 13 13.4696 13 14V21H9V14C9 12.4087 9.63214 10.8826 10.7574 9.75736C11.8826 8.63214 13.4087 8 15 8Z" fill="white"/>
+                                            <path d="M7 9H3V21H7V9Z" fill="white"/>
+                                            <path d="M5 6C6.10457 6 7 5.10457 7 4C7 2.89543 6.10457 2 5 2C3.89543 2 3 2.89543 3 4C3 5.10457 3.89543 6 5 6Z" fill="white"/>
+                                        </svg>
+                                    </a>
                                 </li>
                                 <li class="list_item">
                                     <a href="https://www.instagram.com/cxexxe/" target="_blank"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a>
@@ -1771,82 +1785,67 @@
             }
         });
 
-        //배경 변환
         const originalBgColor = 'linear-gradient(#FFAA4D, #AD0101, #620202)';
-        const grayGradient = 'linear-gradient(171deg, #CDD2DD 9.79%, #E9EBEE 39.14%, #CDD2DD 65.68%, #EBEDF1 90.21%)';
+const grayGradient = 'linear-gradient(171deg, #CDD2DD 9.79%, #E9EBEE 39.14%, #CDD2DD 65.68%, #EBEDF1 90.21%)';
 
-        // 모바일 여부 확인
-        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+// 공통 함수
+function updateStyles({ bgColor, linkColor, logoColor }) {
+    gsap.to('.wrap', { background: bgColor, duration: 1 });
+    document.querySelectorAll('.header_inner ul li a').forEach(link => {
+        gsap.to(link, { color: linkColor, duration: 1 });
+    });
+    document.querySelector('.logo svg path').setAttribute('fill', logoColor);
+}
 
-        // projects 섹션에서의 색상 변경
-        ScrollTrigger.create({
-            trigger: '.projects',
-            start: 'top 40%',
-            end: 'bottom 20%',
-            onEnter: () => {
-                gsap.to('.wrap', { background: grayGradient, duration: 1 });
-                if (!isMobile) {
-                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                        gsap.to(link, { color: '#43040D', duration: 1 }); // 브라운으로 변경
-                    });
-                } else {
-                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
-                    });
-                }
-                // 로고 이미지 변경
-                document.querySelector('.logo img').src = 'images/LOGO_brown.png';
-            },
-            onLeaveBack: () => {
-                gsap.to('.wrap', { background: originalBgColor, duration: 1 });
-                if (!isMobile) {
-                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
-                    });
-                } else {
-                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
-                    });
-                }
-                // 원래 로고로 복귀
-                document.querySelector('.logo img').src = 'images/LOGO.png';
-            },
+// 모바일 여부 확인
+function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
+}
+
+// projects 섹션
+ScrollTrigger.create({
+    trigger: '.projects',
+    start: 'top 40%',
+    end: 'bottom 20%',
+    onEnter: () => {
+        updateStyles({
+            bgColor: grayGradient,
+            linkColor: isMobile() ? '#ffffff' : '#43040D', // 모바일 흰색, 비모바일 브라운
+            logoColor: '#43040D', // 항상 브라운 (모바일 포함)
         });
-
-        // contacts 섹션에서의 색상 변경
-        ScrollTrigger.create({
-            trigger: '.contacts',
-            start: 'top 80%',
-            end: 'bottom 20%',
-            onEnter: () => {
-                gsap.to('.wrap', { background: originalBgColor, duration: 1 });
-                if (!isMobile) {
-                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
-                    });
-                } else {
-                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
-                    });
-                }
-                // 원래 로고로 복귀
-                document.querySelector('.logo img').src = 'images/LOGO.png';
-            },
-            onLeaveBack: () => {
-                gsap.to('.wrap', { background: grayGradient, duration: 1 });
-                if (!isMobile) {
-                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                        gsap.to(link, { color: '#43040D', duration: 1 }); // 브라운으로 변경
-                    });
-                } else {
-                    document.querySelectorAll('.header_inner ul li a').forEach(link => {
-                        gsap.to(link, { color: '#ffffff', duration: 1 }); // 흰색으로 변경
-                    });
-                }
-                // 로고 이미지 변경
-                document.querySelector('.logo img').src = 'images/LOGO_brown.png';
-            },
+    },
+    onLeaveBack: () => {
+        updateStyles({
+            bgColor: originalBgColor,
+            linkColor: '#ffffff', // 항상 흰색
+            logoColor: 'white',   // 항상 흰색
         });
+    },
+});
+
+// contacts 섹션
+ScrollTrigger.create({
+    trigger: '.contacts',
+    start: 'top 80%',
+    end: 'bottom 20%',
+    onEnter: () => {
+        updateStyles({
+            bgColor: originalBgColor,
+            linkColor: '#ffffff', // 항상 흰색
+            logoColor: 'white',   // 항상 흰색
+        });
+    },
+    onLeaveBack: () => {
+        updateStyles({
+            bgColor: grayGradient,
+            linkColor: isMobile() ? '#ffffff' : '#43040D', // 모바일 흰색, 비모바일 브라운
+            logoColor: isMobile() ? '#43040D' : '#43040D', // 모바일 및 비모바일 모두 브라운
+        });
+    },
+});
+
+
+
 
         
 

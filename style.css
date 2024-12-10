@@ -57,7 +57,15 @@ a{
 .scroll-link:focus{
     outline: none;
 }   
+/* 영문만 Inter 폰트 적용 */
+*:lang(en) {
+    font-family: 'Inter', sans-serif;
+}
 
+/* 한글만 Noto Sans KR 폰트 적용 */
+*:lang(ko) {
+    font-family: 'Noto Sans KR', sans-serif;
+}
 
 .cursor {
     width: 1.04vw;
@@ -104,21 +112,21 @@ a{
     justify-content: space-between;
 }
 .header_inner .logo {
-    max-width: 100%; /* 로고의 최대 너비를 100%로 설정 */
-    display: flex; /* Flexbox를 사용하여 정렬 */
-    justify-content: center; /* 중앙 정렬 */
+    max-width: 100%; 
+    display: flex; 
+    justify-content: center;
 }
 
 .header_inner .logo a {
-    display: block; /* a 태그를 블록 요소로 변경 */
-    width: 100%; /* 부모 요소의 너비를 100%로 설정 */
-    height: auto; /* 높이를 자동으로 설정하여 비율 유지 */
+    display: block;
+    width: 100%;
+    height: auto; 
 }
 
 .header_inner .logo a img {
-    width: 100%; /* 이미지 너비를 100%로 설정 */
-    height: auto; /* 높이를 자동으로 설정하여 비율 유지 */
-    object-fit: contain; /* 이미지 비율을 유지하며 부모 요소에 맞춤 */
+    width: 100%; 
+    height: auto; 
+    object-fit: contain;
 }
 .header .menu{
     width: fit-content;
@@ -167,10 +175,10 @@ a{
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    width: fit-content; /* 추가 */
-    display: inline-block; /* 추가 */
-    padding: 0.1em; /* 추가: 여백 추가로 글자 잘림 방지 */
-    background-size: 200% 100%; /* 추가: 그라디언트 크기 조정 */
+    width: fit-content; 
+    display: inline-block; 
+    padding: 0.1em; 
+    background-size: 200% 100%;
 }
 
 .spinningStar {
@@ -201,13 +209,13 @@ a{
     bottom: 8.33vw;
     left: 0;
     width: 100%;
-    z-index: 1; /* 배경으로 위치 */
+    z-index: 1; 
 }
 
 .advantages .marqueeTwo, .contacts .marqueeTwo {
     font-size: 13vw;
     line-height: 1em;
-    color: rgba(238, 238, 238, 0.1); /* 배경처럼 보이도록 투명도 조절 */
+    color: rgba(238, 238, 238, 0.1); 
     display: flex;
     text-transform: uppercase;
     white-space: nowrap;

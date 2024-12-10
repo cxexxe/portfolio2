@@ -1478,8 +1478,9 @@
     }
 
     .btn_parallax {
-        width: 120px;
-        height: 120px;
+        /* width: 120px;
+        height: 120px; */
+        display: none;
     }
     .btn_text {
         color: var(--color-brown);
